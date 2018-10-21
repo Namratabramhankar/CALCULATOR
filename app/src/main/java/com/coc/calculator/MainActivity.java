@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.math.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -47,10 +48,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         String num1 = first_id.getText().toString();
         String num2 = second_id.getText().toString();
+        /*float n1=Float.parseFloat(num1);
+        float n2=Float.parseFloat(num2);*/
+        Operations obj=new Operations(num1,num2);
         switch(v.getId()){
-            case R.id.button_add: float add=Integer.parseInt(num1)+ Integer.parseInt(num2);
+            case R.id.button_add: float add=obj.add();
                                   result.setText(String.valueOf(add));
                                   break;
+
+            case R.id.button_sub: float sub=obj.sub();
+                                  result.setText(String.valueOf(sub));
+                                  break;
+            case R.id.button_div: float div=obj.div();
+                                  if (div==0)
+                                      Toast.makeText(this,"Number cannot be divided by zero",Toast.LENGTH_SHORT).show();
+                                  else
+                                      result.setText(String.valueOf(div));
+                                  break;
+            case R.id.button_mul: float mul=obj.mul();
+                                  result.setText(String.valueOf(mul));
+                                  break;
+           /* case R.id.button_pow: double pow= Math.pow(n1,n2);
+                result.setText(String.valueOf(pow));
+                break;*/
         }
 
     }

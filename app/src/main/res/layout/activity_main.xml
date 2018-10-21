@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="First number"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal" />
 
         <EditText
             android:id="@+id/second_id"
@@ -27,7 +27,7 @@
             android:layout_alignParentTop="true"
             android:ems="10"
             android:hint="Second number"
-            android:inputType="number" />
+            android:inputType="number|numberDecimal" />
 
     </RelativeLayout>
 
